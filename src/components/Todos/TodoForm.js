@@ -6,7 +6,7 @@ const TodoForm = ({ addTodo }) => {
   const [text, setText] = useState('');
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    addTodo(text);
+    addTodo(text.trim());
     setText('');
   };
 
@@ -14,7 +14,7 @@ const TodoForm = ({ addTodo }) => {
     <form className={styles.form} action="" onSubmit={onSubmitHandler}>
       <input
         className={styles.input}
-        onChange={(e) => setText(e.target.value.trim())}
+        onChange={(e) => setText(e.target.value)}
         value={text}
         type="text"
         placeholder="Enter new todo"
