@@ -14,7 +14,7 @@ const TodoForm = ({ addTodo }) => {
     <form className={styles.form} action="" onSubmit={onSubmitHandler}>
       <input
         className={styles.input}
-        onChange={(e) => setText(e.target.value)}
+        onChange={(e) => setText(e.target.value.trim())}
         value={text}
         type="text"
         placeholder="Enter new todo"
